@@ -35,6 +35,8 @@ namespace DevelopmentProject
                     await context.Response.WriteAsync("Hello World!");
                 });
             });
+            //Data Source=LXIBY921;Initial Catalog=DevelopmentProject_DB;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False
+           // Scaffold-DbContext 'Data Source=LXIBY921;Initial Catalog=DevelopmentProject_DB;Integrated Security=True' Microsoft.EntityFrameworkCore.SqlServer
         }
     }
 }

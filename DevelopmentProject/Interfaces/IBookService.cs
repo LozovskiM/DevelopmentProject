@@ -8,6 +8,5 @@ namespace DevelopmentProject.Interfaces
 {
     public interface IBookService : ICrudService<Book>
     {
-
     }
 }

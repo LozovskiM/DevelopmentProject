@@ -8,9 +8,9 @@ namespace DevelopmentProject.Interfaces
     public interface ICrudService<T> where T : IModel
     {
         Task<IEnumerable<T>> GetAllAsync();
-        Task<T> GetByIdAsync(Guid id);
+        Task<T> GetByIdAsync(int id);
         Task<T> CreateAsync(T model);
         Task<T> UpdateAsync(T model);
-        Task<bool> DeleteAsync(Guid id);
+        Task<bool> DeleteAsync(int id);
     }
 }

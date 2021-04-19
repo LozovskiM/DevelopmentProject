@@ -5,7 +5,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace DevelopmentProject.DB
 {
-    public partial class DevelopmentProjectDbContext : DbContext
+    public class DevelopmentProjectDbContext : DbContext
     {
         public DevelopmentProjectDbContext(DbContextOptions<DevelopmentProjectDbContext> options)
             : base(options)
@@ -33,6 +33,9 @@ namespace DevelopmentProject.DB
             OnModelCreatingPartial(modelBuilder);
         }
 
-        partial void OnModelCreatingPartial(ModelBuilder modelBuilder);
+        private void OnModelCreatingPartial(ModelBuilder modelBuilder)
+        {
+            throw new System.NotImplementedException();
+        }
     }
 }

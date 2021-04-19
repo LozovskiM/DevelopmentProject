@@ -1,11 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
+using DevelopmentProject.Interfaces;
 
 #nullable disable
 
 namespace DevelopmentProject.DB.Models
 {
-    public partial class Book
+    public class Book : IModel
     {
         public int Id { get; set; }
         public string Title { get; set; }

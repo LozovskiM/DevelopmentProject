@@ -1,4 +1,6 @@
 using DevelopmentProject.DB;
+using DevelopmentProject.Interfaces;
+using DevelopmentProject.Services;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
@@ -11,6 +13,7 @@ namespace DevelopmentProject
 {
     public class Startup
     {
+
         public Startup(IConfiguration configuration)
         {
             Configuration = configuration;
@@ -22,6 +25,8 @@ namespace DevelopmentProject
         {
             services.AddDbContext<DevelopmentProjectDbContext>(options =>
                 options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
+
+            services.AddScoped<IBookService, BookService>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -38,7 +43,7 @@ namespace DevelopmentProject
             {
                 endpoints.MapGet("/", async context =>
                 {
-
+                    
                     await context.Response.WriteAsync("Hello World!");
 
                 });

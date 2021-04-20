@@ -23,6 +23,8 @@ namespace DevelopmentProject
         
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddMvc();
+
             services.AddDbContext<DevelopmentProjectDbContext>(options =>
                 options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
 
@@ -41,14 +43,11 @@ namespace DevelopmentProject
 
             app.UseEndpoints(endpoints =>
             {
-                endpoints.MapGet("/", async context =>
-                {
-                    
-                    await context.Response.WriteAsync("Hello World!");
-
-                });
+                endpoints.MapControllerRoute(
+                    name: "default",
+                    pattern: "{controller=Home}/{action=Index}/{id?}");
             });
-            
+
         }
     }
 }

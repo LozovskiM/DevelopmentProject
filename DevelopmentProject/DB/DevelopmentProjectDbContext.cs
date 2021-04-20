@@ -30,12 +30,7 @@ namespace DevelopmentProject.DB
                     .IsUnicode(false);
             });
 
-            OnModelCreatingPartial(modelBuilder);
-        }
-
-        private void OnModelCreatingPartial(ModelBuilder modelBuilder)
-        {
-            throw new System.NotImplementedException();
+           // OnModelCreatingPartial(modelBuilder);
         }
     }
 }

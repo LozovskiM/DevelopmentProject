@@ -9,19 +9,18 @@ using System.Threading.Tasks;
 
 namespace DevelopmentProject.Controllers
 {
-    public class HomeController : Controller
+    public class BookController : Controller
     {
-        public readonly IBookService _bk;
+        private readonly IBookService _bk;
 
-        public HomeController(IBookService bk)
+        public BookController(IBookService bk)
         {
             _bk = bk;
         }
 
         public async Task<IActionResult> Index()
         {
-            IEnumerable<Book> books = await _bk.GetAllAsync();
-            ViewBag.book = books;
+            ViewBag.book = await _bk.GetAllAsync();
             return View();
         }
     }
